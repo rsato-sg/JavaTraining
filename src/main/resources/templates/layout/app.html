@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html th:fragment="layout(title, content, usefunction)" lang="ja">
+<html th:fragment="layout(title, content, usefunction)" lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="~{fragments/header :: common_header(${title})}"> </head>
+
 <body>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top flex-md-nowrap p-0 shadow">
     <div class="container-fluid">
@@ -38,8 +40,17 @@
         </div>
         <!--/* ナビバー - ログアウトボタン */-->
         <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" th:classappend="|${usefunction == 'logout' ? 'active' : ''}|" href="#"
+                th:href="@{/logout}">
+                ログアウト
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
@@ -60,4 +71,5 @@
     </div>
   </div>
 </body>
+
 </html>
