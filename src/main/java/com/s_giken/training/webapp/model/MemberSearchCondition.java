@@ -9,5 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MemberSearchCondition {
     private String mail;
+
     // 氏名検索用メンバ変数を用意
+    private String name;
+
 }
