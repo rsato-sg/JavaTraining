@@ -48,6 +48,7 @@ public class Charge {
     @Column(name = "end_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
+
     @CreatedDate
     private Timestamp created_at;
 

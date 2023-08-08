@@ -44,7 +44,6 @@ public class ChargeController {
 
     @GetMapping("/edit/{id}")
     public String editCharge(
-
             @PathVariable int id,
             Model model) {
         var charge = chargeService.findById(id);
@@ -56,7 +55,6 @@ public class ChargeController {
     }
 
     @GetMapping("/add")
-
     public String addCharge(Model model) {
         var charge = new Charge();
         model.addAttribute("charge", charge);
@@ -65,7 +63,6 @@ public class ChargeController {
 
     @PostMapping("/save")
     public String saveCharge(
-
             @Validated Charge charge,
             BindingResult bindingResult,
             RedirectAttributes redirectAttributes) {

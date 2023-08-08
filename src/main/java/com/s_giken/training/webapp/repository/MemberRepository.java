@@ -14,7 +14,7 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     // https://docs.spring.io/spring-data/jpa/docs/1.11.1.RELEASE/reference/html/#jpa.query-methods
 
     public List<Member> findByNameLikeAndMailLike(String name, String mail);
-    // 上を書くとこうなる
+    // 上をSQL文で書くとこうなる
     // @Query("SELECT * FROM T_Member WHERE namelike %
     // +memberSearchCondition.getName()+ % AND maillike %
     // +memberSearchCondition.getMail()+ %")
