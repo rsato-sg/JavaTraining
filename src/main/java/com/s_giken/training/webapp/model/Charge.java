@@ -41,7 +41,7 @@ public class Charge {
 
     @Column(name = "start_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull(message = "必須入力です")
+    @NotNull
     private Date startDate;
 
     @Column(name = "end_date")
