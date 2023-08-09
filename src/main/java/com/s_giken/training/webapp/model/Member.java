@@ -42,6 +42,7 @@ public class Member {
 
     @Column(name = "address") // 対応する列名
     @NotNull // null不可
+    @NotBlank
     private String address;
 
     @Column(name = "start_date") // 対応する列名
