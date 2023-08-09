@@ -24,7 +24,16 @@
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label" for="startDate">運用開始日</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" th:field="*{startDate}" name="joining_date">
+                <!--エラー-->
+                <div class="form-group" th:classappend="${#fields.hasErrors('startDate')} ? 'has-error'">
+                    <input type="date" class="form-control" th:field="*{startDate}" name="joining_date">
+
+                    <div th:if="!${#strings.isEmpty(message2)}" class="alert alert-warning">
+                        <span class="text-danger" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">
+                            startDate error
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="mb-3 row">
@@ -37,7 +46,7 @@
             <label class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
                 <input class="btn btn-primary" type="submit" value="決定" />
-                <a class="btn btn-link" th:href="@{/member/search}">キャンセル</a>
+                <a class="btn btn-link" th:href="@{/charge/search}">キャンセル</a>
             </div>
         </div>
     </form>

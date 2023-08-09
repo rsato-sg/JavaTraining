@@ -37,12 +37,11 @@ public class Charge {
 
     @Column(name = "charge")
     @NotNull
-    @NotBlank
     private int charge;
 
     @Column(name = "start_date")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @NotNull
+    @NotNull(message = "必須入力です")
     private Date startDate;
 
     @Column(name = "end_date")

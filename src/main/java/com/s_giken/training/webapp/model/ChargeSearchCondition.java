@@ -1,5 +1,7 @@
 package com.s_giken.training.webapp.model;
 
+import java.security.Timestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ChargeSearchCondition {
     private String name;
-    private String charge;
+    private int charge;
+    private Timestamp start_date;
+    private Timestamp end_date;
 
 }
