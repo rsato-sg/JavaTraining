@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ChargeSearchCondition {
     private String name;
-    private int charge;
+    private int amount;
     private Timestamp start_date;
     private Timestamp end_date;
 
