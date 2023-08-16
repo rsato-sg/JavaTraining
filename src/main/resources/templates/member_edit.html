@@ -70,12 +70,25 @@
         <!--*/-->
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
+            <div class="col-sm">
                 <button type="submit" class="btn btn-primary">決定</button>
                 <a class="btn btn-link" th:href="@{/member/search}">キャンセル</a>
             </div>
+            <div class="col-sm-auto">
+                <button type="submit" class="btn btn-danger" style="background-color: red;"
+                    onclick="removeExample(this)">削除
+                </button>
+            </div>
+            <script type="text/javascript">
+                function removeExample(button) {
+                    if (window.confirm('本当に削除しますか？')) {
+                        let parent = button.parentNode;
+                        parent.remove();
+                    }
+                }
+            </script>
         </div>
-    </form>
 </div>
+</form>
 
 </html>
