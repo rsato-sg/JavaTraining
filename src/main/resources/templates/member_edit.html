@@ -8,6 +8,7 @@
         <span th:text="${message}"></span>
     </div>
     <form th:action="@{/member/save}" th:object="${member}" method="POST">
+
         <input type="hidden" th:field="*{memberId}">
         <div class="mb-3 row">
             <label class="col-sm-2 col-form-label" for="mail">メールアドレス</label>
@@ -75,19 +76,9 @@
                 <a class="btn btn-link" th:href="@{/member/search}">キャンセル</a>
             </div>
             <div class="col-sm-auto">
-                <button type="submit" class="btn btn-danger" style="background-color: red;"
-                    onclick="removeExample(this)">削除
-                </button>
+                <a class="btn btn-danger" id="delete" th:href="@{/member/delete/{id}(id=${memberId})}"
+                    style="background-color: red;">削除</a>
             </div>
-            <!-- <script type="text/javascript">
-                function removeExample(button) {
-                    if (window.confirm('本当に削除しますか？')) {
-                        let parent = button.parentNode;
-                        parent.remove();
-                    }
-                }
-            </script>-->
-        </div>
     </form>
     <script th:inline="javascript">
         /**
@@ -110,6 +101,5 @@
         });
     </script>
 </div>
-</form>
 
 </html>

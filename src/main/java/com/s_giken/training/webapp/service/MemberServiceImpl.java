@@ -55,7 +55,8 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public List<Member> findByConditions(MemberSearchCondition memberSearchCondition) {
         return memberRepository.findByNameLikeAndMailLike(
-                "%" + memberSearchCondition.getName() + "%", "%" + memberSearchCondition.getMail() + "%");
+                "%" + memberSearchCondition.getName() + "%",
+                "%" + memberSearchCondition.getMail() + "%");
     }
 
     /**
@@ -77,6 +78,6 @@ public class MemberServiceImpl implements MemberService {
      */
     @Override
     public void deleteById(int memberId) {
-        memberRepository.deleteById(memberId);
+        memberRepository.deleteByMemberId(memberId);
     }
 }

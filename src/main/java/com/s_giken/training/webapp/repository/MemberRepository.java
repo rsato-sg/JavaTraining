@@ -2,13 +2,13 @@ package com.s_giken.training.webapp.repository;
 
 import java.util.List;
 
-//import org.antlr.v4.runtime.atn.SemanticContext.AND;
+// import org.antlr.v4.runtime.atn.SemanticContext.AND;
 import org.springframework.data.jpa.repository.JpaRepository;
-//import org.springframework.data.jpa.repository.Query;
+// import org.springframework.data.jpa.repository.Query;
 
 import com.s_giken.training.webapp.model.Member;
 
-//import jakarta.transaction.Transactional;
+// import jakarta.transaction.Transactional;
 
 public interface MemberRepository extends JpaRepository<Member, Integer> {
     // SprintBootでは、予め用意されているのリポジトリアクセス用のメソッド以外のメソッドを
@@ -33,5 +33,5 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     // boolean exists(ID primaryKey);
 
     // @Transactional
-    // List<Member> deleteByMemberId(String memberId);
+    // List<Member> deleteByMemberId(Integer memberId);
 }
