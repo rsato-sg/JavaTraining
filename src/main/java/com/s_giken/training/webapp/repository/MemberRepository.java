@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.s_giken.training.webapp.model.Member;
 
-// import jakarta.transaction.Transactional;
+import jakarta.transaction.Transactional;
 
 public interface MemberRepository extends JpaRepository<Member, Integer> {
     // SprintBootでは、予め用意されているのリポジトリアクセス用のメソッド以外のメソッドを
@@ -32,6 +32,6 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     // void delete(T entity);
     // boolean exists(ID primaryKey);
 
-    // @Transactional
-    // List<Member> deleteByMemberId(Integer memberId);
+    @Transactional
+    List<Member> deleteByMemberId(Integer memberId);
 }

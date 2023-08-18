@@ -50,14 +50,17 @@ public class ChargeController {
         if (!charge.isPresent()) {
             throw new NotFoundException("");
         }
+        model.addAttribute("chargeId", id);
         model.addAttribute("charge", charge);
         return "charge_edit";
+
     }
 
     @GetMapping("/add")
     public String addCharge(Model model) {
         var charge = new Charge();
         model.addAttribute("charge", charge);
+        model.addAttribute("chargeId", null);
         return "charge_edit";
     }
 

@@ -4,6 +4,9 @@
   <!--/*
     加入者情報検索画面
   */-->
+  <div th:if="!${#strings.isEmpty(message)}" class="alert alert-success">
+    <span th:text="${message}"></span>
+  </div>
   <form th:action="@{/member/search}" th:object="${memberSearchCondition}" method="POST">
     <!--/* メールアドレス */-->
     <div class="mb-3 row">

@@ -78,6 +78,6 @@ public class MemberServiceImpl implements MemberService {
      */
     @Override
     public void deleteById(int memberId) {
-        memberRepository.deleteByMemberId(memberId);
+        memberRepository.deleteById(memberId);
     }
 }

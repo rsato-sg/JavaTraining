@@ -76,8 +76,11 @@
                 <a class="btn btn-link" th:href="@{/member/search}">キャンセル</a>
             </div>
             <div class="col-sm-auto">
-                <a class="btn btn-danger" id="delete" th:href="@{/member/delete/{id}(id=${memberId})}"
-                    style="background-color: red;">削除</a>
+                <div th:if="${memberId} != null">
+                    <a class=" btn btn-danger" id="delete" th:href="@{/member/delete/{id}(id=${memberId})}"
+                        style="background-color: red;">削除
+                    </a>
+                </div>
             </div>
     </form>
     <script th:inline="javascript">
