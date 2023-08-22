@@ -63,4 +63,5 @@ public class Member {
 
     @LastModifiedDate // 更新日時を自動設定
     private Timestamp updatedDate;
+
 }

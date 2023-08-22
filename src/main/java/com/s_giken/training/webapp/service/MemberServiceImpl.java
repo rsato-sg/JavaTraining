@@ -2,9 +2,9 @@ package com.s_giken.training.webapp.service;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
-
 import com.s_giken.training.webapp.model.Member;
 import com.s_giken.training.webapp.model.MemberSearchCondition;
 import com.s_giken.training.webapp.repository.MemberRepository;
@@ -54,9 +54,18 @@ public class MemberServiceImpl implements MemberService {
      */
     @Override
     public List<Member> findByConditions(MemberSearchCondition memberSearchCondition) {
+        String colname = memberSearchCondition.getSortColName();
+        String order = memberSearchCondition.getSortOrder();
+        Direction direction = null;
+        if (order.equals("asc")) {
+            direction = Direction.ASC;
+        } else {
+            direction = Direction.DESC;
+        }
+        Sort sort = Sort.by(direction, colname);
         return memberRepository.findByNameLikeAndMailLike(
                 "%" + memberSearchCondition.getName() + "%",
-                "%" + memberSearchCondition.getMail() + "%");
+                "%" + memberSearchCondition.getMail() + "%", sort);
     }
 
     /**

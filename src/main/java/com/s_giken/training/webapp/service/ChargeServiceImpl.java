@@ -3,7 +3,8 @@ package com.s_giken.training.webapp.service;
 
 import java.util.List;
 import java.util.Optional;
-
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.s_giken.training.webapp.model.Charge;
@@ -30,8 +31,18 @@ public class ChargeServiceImpl implements ChargeService {
 
     @Override
     public List<Charge> findByConditions(ChargeSearchCondition chargeSearchCondition) {
+        String colname = chargeSearchCondition.getSortColName();
+        String order = chargeSearchCondition.getSortOrder();
+        Direction direction = null;
+        if (order.equals("asc")) {
+            direction = Direction.ASC;
+        } else {
+            direction = Direction.DESC;
+        }
+        Sort sort = Sort.by(direction, colname);
         return chargeRepository.findByNameLike(
-                "%" + chargeSearchCondition.getName() + "%");
+                "%" + chargeSearchCondition.getName() + "%", sort);
+
     }
 
     @Override

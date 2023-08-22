@@ -2,7 +2,6 @@ package com.s_giken.training.webapp.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import com.s_giken.training.webapp.model.Member;
 import com.s_giken.training.webapp.model.MemberSearchCondition;
 

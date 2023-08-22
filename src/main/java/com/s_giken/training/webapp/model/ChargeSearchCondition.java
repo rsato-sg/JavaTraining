@@ -15,4 +15,6 @@ public class ChargeSearchCondition {
     private Timestamp start_date;
     private Timestamp end_date;
 
+    private String sortColName = "";// 初期化
+    private String sortOrder = "";
 }

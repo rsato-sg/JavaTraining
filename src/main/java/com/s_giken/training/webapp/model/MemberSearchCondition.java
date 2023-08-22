@@ -1,5 +1,6 @@
 package com.s_giken.training.webapp.model;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,4 +15,6 @@ public class MemberSearchCondition {
     // 氏名検索用メンバ変数を用意
     private String name;
 
+    private String sortColName = "";// 初期化
+    private String sortOrder = "";
 }

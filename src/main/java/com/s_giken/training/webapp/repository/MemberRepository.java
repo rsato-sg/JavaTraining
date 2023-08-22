@@ -1,7 +1,7 @@
 package com.s_giken.training.webapp.repository;
 
 import java.util.List;
-
+import org.springframework.data.domain.Sort;
 // import org.antlr.v4.runtime.atn.SemanticContext.AND;
 import org.springframework.data.jpa.repository.JpaRepository;
 // import org.springframework.data.jpa.repository.Query;
@@ -31,6 +31,8 @@ public interface MemberRepository extends JpaRepository<Member, Integer> {
     // Long count();
     // void delete(T entity);
     // boolean exists(ID primaryKey);
+
+    public List<Member> findByNameLikeAndMailLike(String name, String mail, Sort sort);
 
     @Transactional
     List<Member> deleteByMemberId(Integer memberId);

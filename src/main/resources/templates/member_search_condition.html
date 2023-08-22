@@ -24,7 +24,26 @@
       </div>
     </div>
     <!--/* ここにテキストフォームを設置 */-->
-
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">表示順</label>
+      <div class="col-sm-auto">
+        <select class="form-control" th:field="*{sortColName}">
+          <option value="memberId">加入者ID</option>
+          <option value="mail">メールアドレス</option>
+          <option value="name">氏名</option>
+          <option value="address">住所</option>
+          <option value="startDate">加入日</option>
+          <option value="endDate">解約日</option>
+          <option value="paymentMethod">支払方法</option>
+        </select>
+      </div>
+      <div class="col-sm-auto">
+        <select class="form-select" th:field="*{sortOrder}">
+          <option value="asc">昇順</option>
+          <option value="desc">降順</option>
+        </select>
+      </div>
+    </div>
     <div class="mb-3 row">
       <label class="col-sm-2 col-form-label"></label>
       <div class="col-sm-10">
